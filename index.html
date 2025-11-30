@@ -240,14 +240,7 @@
             background: white;
             padding: 15px;
             border-radius: 10px;
-            display: inline-block;
-            margin: 10px 0;
-        }
-
-        .qr-code img {
-            width: 200px;
-            height: 200px;
-            display: block;
+            display: none;
         }
 
         .map-link {
@@ -361,12 +354,9 @@
             </div>
         </div>
 
-        <!-- QR Code Section -->
+        <!-- Google Maps Section -->
         <div class="qr-section">
-            <h3>📍 Scan to Get Directions</h3>
-            <div class="qr-code">
-                <img id="qrCodeImage" alt="QR Code for Location">
-            </div>
+            <h3>📍 Get Directions</h3>
             <a href="https://maps.google.com/?q=Annapurna+Hall+KMCH+Hospital+Avinashi+Road+Coimbatore" 
                target="_blank" 
                class="map-link">
@@ -396,15 +386,6 @@
     </div>
 
     <script>
-        // Generate QR Code using QuickChart API (More reliable)
-        function generateQRCode() {
-            const location = "Annapurna Hall, Opposite KMCH Hospital, Avinashi Road, Coimbatore";
-            const mapsUrl = `https://maps.google.com/?q=${encodeURIComponent(location)}`;
-            // Using QuickChart API - highly reliable and free
-            const qrCodeUrl = `https://quickchart.io/qr?text=${encodeURIComponent(mapsUrl)}&size=200`;
-            document.getElementById('qrCodeImage').src = qrCodeUrl;
-        }
-
         // Open invitation animation
         function openInvitation() {
             const welcomeScreen = document.getElementById('welcomeScreen');
@@ -414,14 +395,8 @@
             
             setTimeout(() => {
                 mainInvitation.classList.add('visible');
-                generateQRCode();
             }, 800);
         }
-
-        // Initialize
-        window.addEventListener('load', () => {
-            // QR code will be generated when invitation is opened
-        });
     </script>
 </body>
 </html>
