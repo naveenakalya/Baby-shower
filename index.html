@@ -316,7 +316,7 @@
     <div id="welcomeScreen">
         <div class="welcome-content">
             <div class="welcome-envelope">💌</div>
-            <h1>உங்களை அன்புடன் அழைக்கிறோம்.</h1>
+            <h1>You're Invited!</h1>
             <p>A special celebration awaits...</p>
             <button class="open-button" onclick="openInvitation()">Open Invitation ✨</button>
         </div>
@@ -341,7 +341,7 @@
         <div class="details-box">
             <div class="detail-item">
                 <strong>👶 Baby Shower in honor of</strong>
-                <p>AKALYA N & Baby</p>
+                <p>[Mom-to-be's Name] & Baby</p>
             </div>
 
             <div class="detail-item">
@@ -351,7 +351,7 @@
 
             <div class="detail-item">
                 <strong>⏰ Time</strong>
-                <p>9:00 AM – 10:30 AM<br>Followed by Lunch</p>
+                <p>9:00 AM – 10:30 AM<br>Followed by Breakfast</p>
             </div>
 
             <div class="detail-item">
@@ -385,9 +385,9 @@
 
         <div class="footer">
             <p><strong>Warmly,</strong><br>
-            Naveen Krishnamoorthy</p>
+            [Your Names / Family Name]</p>
             
-            <p class="contact">8248079782</p>
+            <p class="contact">[Your Contact Number]</p>
         </div>
 
         <p style="margin-top: 25px; color: #ff69b4; font-size: 16px;">
@@ -396,11 +396,12 @@
     </div>
 
     <script>
-        // Generate QR Code using Google Charts API
+        // Generate QR Code using QuickChart API (More reliable)
         function generateQRCode() {
             const location = "Annapurna Hall, Opposite KMCH Hospital, Avinashi Road, Coimbatore";
             const mapsUrl = `https://maps.google.com/?q=${encodeURIComponent(location)}`;
-            const qrCodeUrl = `https://chart.googleapis.com/chart?cht=qr&chs=200x200&chl=${encodeURIComponent(mapsUrl)}`;
+            // Using QuickChart API - highly reliable and free
+            const qrCodeUrl = `https://quickchart.io/qr?text=${encodeURIComponent(mapsUrl)}&size=200`;
             document.getElementById('qrCodeImage').src = qrCodeUrl;
         }
 
